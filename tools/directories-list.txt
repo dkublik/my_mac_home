@@ -1,0 +1,2 @@
+~/projects/aws
+~/projects/dk/aws-logs-monitor/

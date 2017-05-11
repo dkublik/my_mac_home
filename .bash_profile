@@ -1,3 +1,5 @@
+export AD_USERNAME="MTVNE\kublikd"
+
 export GRADLE_HOME="~/programs/gradle-3.5"
 export MONGO_HOME="/usr/local/mongodb/"
 export TOOLS_HOME="~/tools/"
