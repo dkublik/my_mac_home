@@ -1,4 +1,4 @@
-export GRADLE_HOME="/Users/kublikd/programs/gradle-2.13"
+export GRADLE_HOME="~/programs/gradle-3.5"
 export MONGO_HOME="/usr/local/mongodb/"
-export TOOLS_HOME="/Users/kublikd/tools/"
+export TOOLS_HOME="~/tools/"
 export PATH=$PATH:$GRADLE_HOME/bin:$MONGO_HOME/bin:$TOOLS_HOME
