@@ -23,4 +23,3 @@ cd $service_dir
 ./gradlew build
 ./gradlew -Dspring.profiles.active=dev-local bootRun
 
-
