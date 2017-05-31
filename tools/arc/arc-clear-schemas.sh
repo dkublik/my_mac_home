@@ -1,5 +1,3 @@
-base_dir=~
-
 schemas=( "localization_dictionaries" "assets" "content" "scheduling" "delivery" "casl_migration")
 
 for schema in "${schemas[@]}"
