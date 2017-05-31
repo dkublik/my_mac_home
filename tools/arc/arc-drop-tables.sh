@@ -1,6 +1,6 @@
-schemas=( "localization_dictionaries" "assets" "content" "scheduling" "delivery" "casl_migration")
+source arc-schemas.sh
 
-for schema in "${schemas[@]}"
+for schema in "${arc_schemas[@]}"
 do
    echo '--- clearing' $schema
 
