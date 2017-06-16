@@ -5,11 +5,9 @@ processes=`ps -ef | grep $p_name`
 
 for process in "$processes"
 do
-   pid=$(echo $process | awk '{print $2}')
-   name=$(echo $process | awk '{print $8}')
-   aaa="/${p_name}/"
-   echo $aaa
-   params=$(echo $process | awk '{for(i=1;i<=NF;i++){if ($i ~ aaa && length($i) < 400){print $i}}}')
+   pid=$(echo $process | awk "{print $2}")
+   name=$(echo $process | awk "{print $8}")
+   params=$(echo $process | awk "{for(i=1;i<=NF;i++){if ($i ~ /discovery/ && length($i) < 100){print $i}}}")
    echo "killing $name $params"
 done
 
