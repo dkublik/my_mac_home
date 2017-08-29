@@ -1,8 +1,8 @@
-source arc-schemas.sh
+source _schemas.sh
 
 for schema in "${arc_schemas[@]}"
 do
-   echo '--- clearing' $schema
+   echo '--- dropping' $schema
 
    drop_tables_sql=$(psql -h localhost -U postgres postgres -t -c "select 'drop table ${schema}.' || tablename || ' cascade;' from pg_tables where schemaname = '${schema}';")
 #   drop_tables_sql=d${drop_tables_sql#*d}

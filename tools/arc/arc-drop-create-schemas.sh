@@ -1,8 +1,8 @@
-source arc-schemas.sh
+source _schemas.sh
 
 for schema in "${arc_schemas[@]}"
 do
-   echo 'clearing' $schema
+   echo 'dropping' $schema
 
    psql -h localhost -U postgres postgres -c "DROP SCHEMA $schema cascade;"
 
@@ -10,5 +10,5 @@ do
 
 done
 
-echo '--- all cleared '
+echo '--- all dropped created '
 
