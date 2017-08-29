@@ -2,8 +2,6 @@ source _schemas.sh
 source _clearable-tables.sh
 source _users.sh
 
-#db_host="localhost"
-#db_name="postgres"
 db_host="arc-ng-ci.cykkw52s95iz.us-east-1.rds.amazonaws.com"
 db_name="arc_features_ci"
 #db_host="arc-ng-ci.cykkw52s95iz.us-east-1.rds.amazonaws.com"
@@ -25,7 +23,6 @@ do
 		clear_table_sql="TRUNCATE TABLE ${schema}.${table} CASCADE;"
    		echo $clear_table_sql
 		psql -h $db_host -U ${arc_users[$schema]} $db_name -c "$clear_table_sql"
-   		# psql -h $db_host -U postgres $db_name -c "$clear_table_sql"
 	done
 done
 
