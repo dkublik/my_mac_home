@@ -5,5 +5,6 @@ arc_clearable_tables=( ["localization_dictionaries"]=""
  ["scheduling"]="revision,schedule_entries,audit_schedule_entries,audit_stages,schedule_changed_notification,audit_schedule_changed_notification"
  ["delivery"]="revision,content_schedules,content_relations,content_asset_relations,content,assets,audit_assets,audit_content_relations,audit_content_schedules,audit_content_asset_relations,audit_content"
  ["casl_migration"]="revision,dependencies_queue,content_data,bucket_affected_dp_data,id_mappings,delete_synchronization,audit_dependencies_queue,audit_content_data,audit_bucket_affected_dp_data,audit_id_mappings,audit_delete_synchronization,schedule_data,audit_schedule_data,audit_content_data_schedules,content_data_schedules" 
+ ["graphql"]="content_schedules,content_relations,content_asset_relations,content,assets,audit_assets,audit_content_relations,audit_content_schedules,audit_content_asset_relations,audit_content"
 )
 
