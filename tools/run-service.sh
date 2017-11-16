@@ -1,7 +1,11 @@
 base_dir=~
 
 service_name=$1
-echo '----- running ' service_name
+if [ $# -eq 0 ]; then
+	service_name=${PWD##*/}
+fi
+
+echo '---------------- running ' service_name
 service_homes=( "$base_dir/projects/arc-ng" "$base_dir/projects/arc-ng2" )
 
 for service_home in "${service_homes[@]}"
