@@ -1,13 +1,22 @@
 source _schemas.sh
+source _users.sh
+source _env-choice.sh
+
 
 for schema in "${arc_schemas[@]}"
 do
-   echo 'dropping' $schema
+	if [ $db_host != 'localhost'  ]; then
+		db_user=${arc_users[$schema]}
+	fi	
+   	echo '--- dropping' $schema ' user:' ${db_user}
 
-   psql -h localhost -U postgres postgres -c "DROP SCHEMA $schema cascade;"
+	drop_sql="DROP SCHEMA $schema cascade;"
+	echo $drop_sql
+	psql -h $db_host -p $db_port -U ${db_user} $db_name -c "$drop_sql"
 
-   psql -h localhost -U postgres postgres -c "CREATE SCHEMA $schema AUTHORIZATION postgres;"
-
+	create_sql="CREATE SCHEMA $schema AUTHORIZATION $db_user;"
+	echo $create_sql
+	psql -h $db_host -p $db_port -U ${db_user} $db_name -c "$create_sql"
 done
 
 echo '--- all dropped created '
