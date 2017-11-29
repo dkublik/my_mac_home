@@ -5,7 +5,7 @@ source _env-choice.sh
 
 for schema in "${arc_schemas[@]}"
 do
-	if [ $db_host != 'localhost'  ]; then
+	if [ "$1" != 'localhost'  ]; then
 		db_user=${arc_users[$schema]}
 	fi	
    	echo '--- truncating' $schema ' user:' ${db_user}
@@ -17,6 +17,9 @@ do
    		echo $clear_table_sql
 		psql -h $db_host -p $db_port -U ${db_user} $db_name -c "$clear_table_sql"
 	done
+	reset_seq_sql=$(psql -h $db_host -p $db_port -U ${db_user} $db_name -t -c "select 'alter sequence ${schema}.' || sequence_name || ' restart with 1;' from information_schema.sequences where sequence_schema='${schema}';")
+	echo $reset_seq_sql
+	psql -h $db_host -p $db_port -U ${db_user} $db_name -c "$reset_seq_sql"
 done
 
 echo "--- all truncated"
