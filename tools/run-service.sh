@@ -24,6 +24,6 @@ done
 echo '--- building ' $service_dir
 
 cd $service_dir
-./gradlew build
+./gradlew build -x integrationTest
 ./gradlew -Dspring.profiles.active=dev-local bootRun -x integrationTest
 
