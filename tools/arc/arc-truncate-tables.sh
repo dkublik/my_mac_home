@@ -5,7 +5,7 @@ source _env-choice.sh
 
 for schema in "${arc_schemas[@]}"
 do
-	if [ "$1" != 'localhost'  ]; then
+	if [ "$1" != 'local'  ]; then
 		db_user=${arc_users[$schema]}
 	fi	
    	echo '--- truncating' $schema ' user:' ${db_user}
