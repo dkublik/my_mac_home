@@ -5,10 +5,10 @@ source _env-choice.sh
 
 for schema in "${arc_schemas[@]}"
 do
-	if [ $db_host != 'localhost'  ]; then
-		db_user=${arc_users[$schema]}
-	fi	
-   	echo '--- adding prviliges in' $schema ' user:' ${db_user}
+   	if [ "$1" != 'local'  ]; then
+        	db_user=${arc_users[$schema]}
+        fi
+	echo '--- adding prviliges in' $schema ' user:' ${db_user}
 
 	sql="GRANT ALL PRIVILEGES on ALL TABLES IN SCHEMA ${schema} TO arc_developer;"
    	echo $sql
