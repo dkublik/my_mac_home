@@ -1,12 +1,13 @@
 export AD_USERNAME="MTVNE\kublikd"
 
 export JAVA_HOME="/Users/kublikd/programs/jdk-11.0.2.jdk/Contents/Home"
-export GRADLE_HOME="~/programs/gradle-4.3"
+export GRADLE_HOME="~/programs/gradle-5.4.1"
 export MVN_HOME="~/programs/apache-maven-3.5.2"
-export MONGO_HOME="/usr/local/mongodb/"
-export TOOLS_HOME="~/tools/"
-export POSTGRES_HOME="/Applications/Postgres.app/Contents/Versions/latest/"
-export PATH=$PATH:$GRADLE_HOME/bin:$MVN_HOME/bin:$MONGO_HOME/bin:$TOOLS_HOME:$TOOLS_HOME/arc/:$POSTGRES_HOME/bin
+export MONGO_HOME="/usr/local/mongodb"
+export TOOLS_HOME="~/tools"
+export POSTGRES_HOME="/Applications/Postgres.app/Contents/Versions/latest"
+export RUBY_HOME="/usr/local/opt/ruby"
+export PATH=$GRADLE_HOME/bin:$MVN_HOME/bin:$MONGO_HOME/bin:$TOOLS_HOME:$TOOLS_HOME/arc/:$POSTGRES_HOME/bin:$RUBY_HOME/bin:$PATH
 
 
 # Setting PATH for Python 2.7
